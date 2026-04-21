@@ -1,0 +1,10 @@
+numpy
+pandas
+scikit-learn
+face-recognition
+setuptools<70.0.0
+supabase
+bcrypt
+segno
+pillow
+streamlit
