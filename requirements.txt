@@ -1,21 +1,38 @@
+# streamlit
+# # Utilitites 
+# numpy
+# pandas
+
+# # FACE RECOGNITION
+# scikit-learn
+
+# face-recognition
+# setuptools<70.0.0
+# dlib
+# cmake
+# opencv-python-headless
+# face-recognition-models
+
+# supabase
+# bcrypt
+
+# segno
+# pillow
+# librosa
+# resemblyzer
+
 streamlit
-# Utilitites 
 numpy
 pandas
-
-# FACE RECOGNITION
 scikit-learn
-
-face-recognition
-setuptools<70.0.0
-dlib
 cmake
-opencv-python-headless
+dlib
+face-recognition
 face-recognition-models
-
+setuptools<70.0.0
+opencv-python-headless
 supabase
 bcrypt
-
 segno
 pillow
 librosa
