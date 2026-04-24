@@ -9,6 +9,8 @@ scikit-learn
 face-recognition
 setuptools<70.0.0
 dlib
+cmake
+opencv-python-headless
 face-recognition-models
 
 supabase
