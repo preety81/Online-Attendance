@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  attendance-app:
+    build: .
+    container_name: attendance-app
+    ports:
+      - "8501:8501"
+    environment:
+      # Supabase Configuration
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
+      
+      # Application Settings
+      APP_ENV: ${APP_ENV:-production}
+      APP_DOMAIN: ${APP_DOMAIN:-http://localhost:8501}
+      DEBUG: ${DEBUG:-False}
+      
+      # ML Thresholds
+      FACE_DISTANCE_THRESHOLD: ${FACE_DISTANCE_THRESHOLD:-0.6}
+      VOICE_PRESENT_THRESHOLD: ${VOICE_PRESENT_THRESHOLD:-0.5}
+      VOICE_MATCH_THRESHOLD: ${VOICE_MATCH_THRESHOLD:-0.65}
+      
+      # Logging
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_FILE: ${LOG_FILE:-.logs/attendance.log}
+      
+      # Validation
+      PASSWORD_MIN_LENGTH: ${PASSWORD_MIN_LENGTH:-8}
+      SESSION_TIMEOUT_SECONDS: ${SESSION_TIMEOUT_SECONDS:-3600}
+    
+    volumes:
+      - ./shared_data:/app/shared_data
+      - ./logs:/app/.logs
+      - ./uploads:/app/uploads
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  shared_data:
+  logs:
+  uploads:
