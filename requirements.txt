@@ -1,39 +1,41 @@
-# streamlit
-# # Utilitites 
-# numpy
-# pandas
+# --- Core UI ---
+streamlit>=1.36,<2
 
-# # FACE RECOGNITION
-# scikit-learn
-
-# face-recognition
-# setuptools<70.0.0
-# dlib
-# cmake
-# opencv-python-headless
-# face-recognition-models
-
-# supabase
-# bcrypt
-
-# segno
-# pillow
-# librosa
-# resemblyzer
-
-streamlit
+# --- Data utilities ---
 numpy
 pandas
 scikit-learn
+pillow
+
+# --- Face recognition ---
+# setuptools must be < 70 because face-recognition-models uses the
+# old `use_2to3` distutils flag.
+setuptools<70.0.0
 cmake
 dlib
 face-recognition
 face-recognition-models
-setuptools<70.0.0
 opencv-python-headless
-supabase
+
+# --- Database / auth ---
+supabase>=2.5,<3
 bcrypt
+
+# --- QR codes (subject sharing) ---
 segno
-pillow
+
+# --- Voice recognition ---
 librosa
 resemblyzer
+
+# --- Environment & Configuration ---
+python-dotenv>=1.0.0
+
+# --- Security & Logging (NEWLY ADDED) ---
+python-json-logger>=2.0.0  # Structured logging
+
+# --- Testing (NEWLY ADDED) ---
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-asyncio>=0.21.0

@@ -1,0 +1,37 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.114:8501
+
++------------------------- Traceback (most recent call last) --------------------------+
+| C:\Users\nikun\OneDrive\Desktop\majorproject\Online-Attendance\.venv\Lib\site-packag |
+| es\streamlit\runtime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling  |
+|                                                                                      |
+| C:\Users\nikun\OneDrive\Desktop\majorproject\Online-Attendance\.venv\Lib\site-packag |
+| es\streamlit\runtime\scriptrunner\script_runner.py:689 in code_to_exec               |
+|                                                                                      |
+| C:\Users\nikun\OneDrive\Desktop\majorproject\Online-Attendance\app.py:3 in <module>  |
+|                                                                                      |
+|    1 import streamlit as st                                                          |
+|    2                                                                                 |
+| >  3 from src.screens.home_screen import home_screen                                 |
+|    4 from src.screens.student_screen import student_screen                           |
+|    5 from src.screens.teacher_screen import teacher_screen                           |
+|    6 from src.components.dialog_auto_enroll import auto_enroll_dialog                |
+|                                                                                      |
+| C:\Users\nikun\OneDrive\Desktop\majorproject\Online-Attendance\src\screens\home_scre |
+| en.py:2 in <module>                                                                  |
+|                                                                                      |
+|    1 import streamlit as st                                                          |
+| >  2 from src.components.header import header_home                                   |
+|    3 from src.ui.base_layout import style_base_layout, style_background_home         |
+|    4 from src.components.footer import footer_home                                   |
+|    5                                                                                 |
++--------------------------------------------------------------------------------------+
+ImportError: cannot import name 'header_home' from 'src.components.header' 
+(C:\Users\nikun\OneDrive\Desktop\majorproject\Online-Attendance\src\components\header.py
+)
